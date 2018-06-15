@@ -1,16 +1,18 @@
-var Li = document.getElementsByTagName('li');
-var oBox = document.getElementsByClassName("box");
-for (var i = 0; i < Li.length; i++) {
-    Li[i].index = i;
-    Li[i].onclick = function () {
-        for (var j = 0; j < Li.length; j++) {
-            Li[j].className = "";
+var op = document.getElementById("options");
+var oLi = op.getElementsByTagName('li');
+var oL = document.getElementById("list");
+var oLLi = oL.getElementsByTagName('li');
+for (var i = 0; i <oLi.length; i++) {
+    oLi[i].index = i;
+    oLi[i].onclick = function () {
+        for (var j = 0; j < oLi.length; j++) {
+            oLi[j].className = "";
         }
-        Li[this.index].className = "cative";
-        for (var i = 0; i < oBox.length; i++) {
-            oBox[i].style.display = "none";
+        oLi[this.index].className = "cative";
+        for (var i = 0; i < oLLi.length; i++) {
+            oLLi[i].style.display = "none";
         }
-        oBox[this.index].style.dipslay = "block";
+        oLLi[this.index].style.dipslay = "block";
     }
 }
 
